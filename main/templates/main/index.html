@@ -1,5 +1,9 @@
 {% load static %}
 
 <h1>Hello World!</h1>
+{% for post in posts %}
+
 <h2>{{ post.code }}</h2>
-{{ post.content }} <img src="{% static image %}" alt="" />
+{{ post.content }} <img src="{% static post.image %}" alt="" />
+
+{% endfor %}
