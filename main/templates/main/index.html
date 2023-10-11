@@ -1,9 +1,47 @@
 {% load static %}
 
+<head>
+    <title>Popular Front Archive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        Popular Front Archive
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu ml-6">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+  
+        <a class="navbar-item">
+          About
+        </a>
+      </div>
+    </div>
+</nav>
+
 <h1>Hello World!</h1>
 {% for post in posts %}
 
 <h2>{{ post.code }}</h2>
-{{ post.content }} <img src="{% static post.image %}" alt="" />
+{{ post.content }}
+{% if ".mp4" in post.image %}
+    <video controls>
+        <source src="{% static post.image %}" type="video/mp4">
+    </video>
+{% else %}
+    <img src="{% static post.image %}" alt="" />
+{% endif %}
 
 {% endfor %}
