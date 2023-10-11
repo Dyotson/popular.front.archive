@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "popular-front-archive"
+version = "0.1.0"
+description = "Webpage that makes a backup of every new news that popular.front publishes. This page is not monetized until we can establish contact with the page creator."
+authors = ["Dyotson <mjmilitzer@uc.cl>"]
+license = "GNU GLPv3"
+readme = "README.md"
+packages = [{include = "popular"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.6"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+bs4 = "^0.0.1"
+lxml = "^4.9.3"
+instaloader = "^4.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
