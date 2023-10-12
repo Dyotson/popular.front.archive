@@ -37,11 +37,11 @@ def get_post(request):
             ]:
                 if post.is_video:
                     image = f"{post.shortcode}.mp4"
-                    with open(f"static/{image}", "wb") as f:
+                    with open(f"staticfiles/{image}", "wb") as f:
                         f.write(requests.get(post.video_url).content)
                 else:
                     image = f"{post.shortcode}.jpg"
-                    with open(f"static/{image}", "wb") as f:
+                    with open(f"staticfiles/{image}", "wb") as f:
                         f.write(requests.get(post.url).content)
                 Post.objects.create(
                     code=post.shortcode,
