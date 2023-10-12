@@ -1,47 +1,27 @@
+{% extends "main/head.html" %}
 {% load static %}
 
-<head>
-    <title>Popular Front Archive</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-
-<nav class="navbar is-black" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        Popular Front Archive
-      </a>
-  
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu ml-6">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-  
-        <a class="navbar-item">
-          About
-        </a>
-      </div>
-    </div>
-</nav>
-
-<h1>Hello World!</h1>
+{% block content %}
+<body style="background-color: gray;">
+<div class="has-text-centered mt-6">
+  <h1 class="title is-1">Popular Front Archive</h1>
+  <h2 class="subtitle mb-6">Your news, without censorship.</h2>
+</div>
 {% for post in posts %}
-
-<h2>{{ post.code }}</h2>
-{{ post.content }}
-{% if ".mp4" in post.image %}
-    <video controls>
-        <source src="{% static post.image %}" type="video/mp4">
-    </video>
-{% else %}
-    <img src="{% static post.image %}" alt="" />
-{% endif %}
-
+<div class="container mb-6">
+  <div class="notification is-dark is-align-items-center" style="display: flex;">
+  {% if ".mp4" in post.image %}
+      <video controls width="10%" height="auto" style="flex: 20%">
+          <source src="{% static post.image %}" type="video/mp4">
+      </video>
+  {% else %}
+      <img width="10%" height="auto" src="{% static post.image %}" alt="" style="flex: 20%;"/>
+  {% endif %}
+  <p style="flex: 80%;" class="ml-6 has-text-justified">
+    {{ post.content }}
+  </p>
+    </div>
+</div>
 {% endfor %}
+</body>
+{% endblock content %}
