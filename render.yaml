@@ -1,11 +1,10 @@
 services:
   - type: web
     name: PopularFrontArchive
+    plan: free
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn mysite.wsgi:application"
     envVars:
       - key: SECRET_KEY
         generateValue: true
-      - key: WEB_CONCURRENCY
-        value: 4
