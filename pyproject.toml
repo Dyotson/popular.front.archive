@@ -5,7 +5,6 @@ description = "Webpage that makes a backup of every new news that popular.front 
 authors = ["Dyotson <mjmilitzer@uc.cl>"]
 license = "GNU GLPv3"
 readme = "README.md"
-packages = [{include = "popular"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
