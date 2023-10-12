@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<body style="background-color: gray;">
+<body style="background-color: gray; padding-bottom: 25%">
 <div class="has-text-centered mt-6">
   <h1 class="title is-1">Popular Front Archive</h1>
   <h2 class="subtitle mb-6">Your news, without censorship.</h2>
@@ -19,6 +19,9 @@
   {% endif %}
   <p style="flex: 80%;" class="ml-6 has-text-justified">
     {{ post.content }}
+    <br>
+    <br>
+    {{ post.published_at }}
   </p>
     </div>
 </div>

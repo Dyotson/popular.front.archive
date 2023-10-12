@@ -15,6 +15,7 @@ python-dotenv = "^1.0.0"
 bs4 = "^0.0.1"
 lxml = "^4.9.3"
 instaloader = "^4.10"
+gunicorn = "^21.2.0"
 
 
 [build-system]
