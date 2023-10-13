@@ -2,7 +2,7 @@
 
 ## About
 
-Popular Front Archive is a webapp developed with Django, it uses a packaged called [Instaloader](https://instaloader.github.io/) to download Instagram posts and stories of Popular Front. The app is hosted on [Render](https://popularfrontarchive.onrender.com/) and uses [PostgreSQL](https://www.postgresql.org/) as a database. It uses [Cron-Job](https://console.cron-job.org) to run the `get_post` view every 5 minutes.
+Popular Front Archive is a webapp developed with Django, it uses a packaged called [Instaloader](https://instaloader.github.io/) to download Instagram posts and stories of Popular Front. The app is hosted on [Render](https://render.com/) and uses [PostgreSQL](https://www.postgresql.org/) as a database. It uses [Cron-Job](https://console.cron-job.org) to run the `get_post` view every 5 minutes.
 
 In theory, this webapp could be used with any Instagram account, but it was developed with Popular Front in mind.
 
